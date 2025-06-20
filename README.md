@@ -8,3 +8,6 @@ servicios.sh
 • Debe revisar el estado de servicios definidos en una lista.
 • Si un servicio está inactivo, debe intentar iniciarlo.
 • Debe registrar los servicios caídos e informar por Telegram.
+-----------------------------------------------------------------------------------------
+
+Continuando con el monitoreo del servicio, el mismo script tendra la funcion de poder enviar un mensaje a Telegram, donde informara el servicio que se estubo monitoreando, y dira que se(detuvo/callo) pero se reinicio.
