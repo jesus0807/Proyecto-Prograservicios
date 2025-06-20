@@ -1,1 +1,32 @@
 quiero ver si jala 
+
+recordar que primero hay que ejecutar el script de bucle.sh en segundo plano para poder usar:
+sudo systemctl stop (servicio) de forma automatica 
+
+# Para ingresar a Git hub desde debian es:
+
+- Instalar Git Hub en debian 
+sudo apt update && sudo apt upgrade -y
+sudo apt install git 
+
+- Comprobar si tienes Git Hub instalado 
+git --version
+
+- Configurar tu identidad de Git
+git config --global user.name "tu nombre"
+git config --global user.email "tu correo"
+
+- Generar una clave SSH
+ssh-keygen -t ed25519 -C "tu correo"
+
+- Copia la llave
+cat ~/. ssh/id_ed25519.pub
+
+- Ir al Git Hub 
+agregar la llave
+
+- Clonar el repositorio del grupo de trabajo 
+git clone git@github.com:jesus0807/Proyecto-Prograservicios.git
+
+- Crear y moverte a tu rama
+git checkout -b Irvin-Servicios.sh
