@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Los datos del bot de telegram
-TOKEN="7862071230:AAGkPBjaXhVQqp6daSTrROhrxmHny-ll17Q" #Token del bot proporcionado por BotFather
-CHAT_ID="-1002891538692" # ID del grupo dek telegram donde esta el bot
+source /home/irvin/GitHub/Proyecto-Prograservicios/config.txt 
 
 servicios=("ssh" "cron" "nginx") #lista de servicios que se trabajaran
 
