@@ -1,7 +1,11 @@
 #!/bin/bash
 
 # Los datos del bot de telegram
-source /home/irvin/GitHub/Proyecto-Prograservicios/config.txt 
+source /home/irvin/GitHub/Proyecto-Prograservicios/config.txt
+
+echo "TOKEN: $TOKEN"
+echo "CHAT_ID: $CHAT_ID"
+echo "SERVICIOS: ${SERVICIOS[@]}"
 
 mensaje_telegram() { #funcionamiento para enviar las notificaciones
 	local mensaje="$1"
@@ -12,7 +16,7 @@ mensaje_telegram() { #funcionamiento para enviar las notificaciones
 }
 
 # Butle principal
-for servicio in "${servicios[@]}"; do #se recorrera los servicios en la lista
+for servicio in "${SERVICIOS[@]}"; do #se recorrera los servicios en la lista
 	systemctl is-active --quiet $servicio #se verificara si el servicio esta activo
 
 	if [ $? -ne 0 ]; then # si esta inactivo (status diferente de 0) el servicio esta detendio
