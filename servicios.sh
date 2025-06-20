@@ -3,8 +3,6 @@
 # Los datos del bot de telegram
 source /home/irvin/GitHub/Proyecto-Prograservicios/config.txt 
 
-servicios=("ssh" "cron" "nginx") #lista de servicios que se trabajaran
-
 mensaje_telegram() { #funcionamiento para enviar las notificaciones
 	local mensaje="$1"
 
