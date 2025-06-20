@@ -1,8 +1,10 @@
-# Proyecto-Prograservicios
-gestor de servicios
+EXPLICACION DEL SCRIPT "SERVICIOS.SH"
 
-## Usuarios.sh
-Todavia no le se chido al github
+Este script tiene como objetivo monitorear de forma automaticamente algunos de los servicios de linux (ssh cron nginx), la cual detectara si alguno de estos esta "INACTIVO", siendo asi, que se tendra que reiniciar de forma automaticamente.
 
-## Servicio.sh
-Saquen el fornite 
+A continuacion se seguira con las instruccione que el profesor propuso para este script
+----------------------------------------------------------------------------------------
+servicios.sh
+• Debe revisar el estado de servicios definidos en una lista.
+• Si un servicio está inactivo, debe intentar iniciarlo.
+• Debe registrar los servicios caídos e informar por Telegram.
