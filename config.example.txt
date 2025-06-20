@@ -2,5 +2,5 @@
 TOKEN="12346556ABCD"
 CHAT_ID="123456ABCD"
 RESPALDO_DIR="/home/ruta/al/directorio"
-SERVICIOS=("apache2" "cron" "ssh")
+SERVICIOS=("apache2" "cron" "ssh" "nginx")
 RUTA_LOGS="./logs"
