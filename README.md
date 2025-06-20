@@ -1,17 +1,18 @@
 ## Proyecto Final - Programación para la Administración de Servicios.
 ## Miembros del equipo:
--1: Christopher Gomez Mendoza.
--2: Jesus Valentin Flandes Hernandez
--3: Mario Erik Flandes Hernandez
--4: Irvin Josafat Dominguez Morales
+1. **Christopher Gomez Mendoza**
+2. **Jesus Valentín Flandes Hernandez**
+3. **Mario Erik Flandes Hernandez**
+4. **Irvin Josafat Domínguez Morales**
+
 
 ## Objetivo del proyecto.
 Desarrolar e implementar diferentes Scripts en Bash para facilitar o automatizar tareas de Sysadmin en servidores basados en Linux, tales como la  gestion de usuarios, respaldos de directorios, monitoreo de equipo, controles de servicios y ejecuciones remotas.
 Todo enlazado a un bot de la aplicaicon de Telegram que notifica de manera autonoma y en tiemop real lo que sucede en el sistema. 
 
 ## Scripts implementados.
--Usuarios.sh: Gestiona, facilita y guarda registros sobre las altas y bajas de usuarios en el sistema.
--Respaldo.sh: Facilita el guardado de directorios especificos, esto con la ayuda de respaldos programados.
--Monitoreo.sh: Analiza los componentes del sistema dando una alerta instantanea cuando este sobrepasa cierto porcentage de GPU.
--Servicios.sh: Analiza y reinicia de manera automatica servicios especificos.
--Remoto.sh:  Copia y ejecuta scripts en múltiples hosts remotos usando "scp" y "ssh".
+- **`usuarios.sh`**: Gestiona altas, bajas y modificaciones de usuarios. Registra acciones en logs y envía alertas por Telegram.
+- **`respaldo.sh`**: Automatiza el respaldo de directorios específicos utilizando `tar` y `cron`. Envía notificación al finalizar.
+- **`monitoreo.sh`**: Supervisa el uso de CPU y disco. Si se superan ciertos umbrales, alerta por Telegram.
+- **`servicios.sh`**: Verifica si servicios críticos están activos. Si no, intenta reiniciarlos y avisa.
+- **`remoto.sh`**: Copia scripts a múltiples hosts remotos usando `scp` y los ejecuta con `ssh`. Genera reporte por host.
