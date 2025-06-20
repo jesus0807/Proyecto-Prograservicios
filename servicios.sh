@@ -1,11 +1,7 @@
 #!/bin/bash
 
 # Los datos del bot de telegram
-source /home/irvin/GitHub/Proyecto-Prograservicios/config.txt
-
-echo "TOKEN: $TOKEN"
-echo "CHAT_ID: $CHAT_ID"
-echo "SERVICIOS: ${SERVICIOS[@]}"
+source "$(dirname "$0")/config.txt"
 
 mensaje_telegram() { #funcionamiento para enviar las notificaciones
 	local mensaje="$1"
@@ -20,13 +16,12 @@ for servicio in "${SERVICIOS[@]}"; do #se recorrera los servicios en la lista
 	systemctl is-active --quiet $servicio #se verificara si el servicio esta activo
 
 	if [ $? -ne 0 ]; then # si esta inactivo (status diferente de 0) el servicio esta detendio
-		echo "Heyyy tu el que estas viendo esto, !el servicio $servicio esta detenido o caido, se esta tratando de reiniciar"
 		systemctl restart "$servicio" #intenta reiniciar el servicio
 		sleep 1 # espera breve para el reinicio para el efecto
 
 		systemctl is-active --quiet "$servicio" # verifica nuevamente si el servicio se activo
 
-		if [ $? -eq 0 ]; then # salta un mensaje se c reinico 
+		if [ $? -eq 0 ]; then # salta un mensaje se c reinico
 		mensaje=" onni-chan el servicio $servicio se detubo o cayo, pero se reiniciooo"
 		echo "$mensaje"
 		else
