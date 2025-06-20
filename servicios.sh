@@ -23,7 +23,7 @@ for servicio in "${SERVICIOS[@]}"; do #se recorrera los servicios en la lista, q
 		systemctl is-active --quiet "$servicio" # vuelve a verificar si el servicio esta activo ( se reinicio automaticamente)
 
 		if [ $? -eq 0 ]; then # condicion donde el servicio se reinicio automaticamente ( codigo mayor a 0 ) se reinicio exitosamente
-		mensaje=" onni-chan el servicio $servicio se detubo o cayo, pero se reiniciooo, el reinicio se realizo el dia (date '+%Y-%m-%d') en la hora (date '+%H:%M:%S')" # notifica que c reinicio automaticamente
+		mensaje=" onni-chan el servicio $servicio se detubo o cayo, pero se reiniciooo, el reinicio se realizo el dia $(date '+%Y-%m-%d') en la hora $(date '+%H:%M:%S')" # notifica que c reinicio automaticamente
 
 		echo "$mensaje"
 		else # sino logro reiniciar el servicio
