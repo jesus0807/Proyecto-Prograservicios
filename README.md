@@ -17,5 +17,3 @@ Todo enlazado a un bot de la aplicaicon de Telegram que notifica de manera auton
 - **`servicios.sh`**: Verifica si servicios críticos están activos. Si no, intenta reiniciarlos y avisa.
 - **`remoto.sh`**: Copia scripts a múltiples hosts remotos usando `scp` y los ejecuta con `ssh`. Genera reporte por host.
 
-## config.txt
-Importante: Crea tu propio config.txt a partir del archivo config.example.txt y completa tus datos reales antes de ejecutar los scripts.
