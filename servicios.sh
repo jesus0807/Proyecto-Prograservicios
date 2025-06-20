@@ -1,5 +1,8 @@
 #!/bin/bash
 
+TOKEN="7862071230:AAGkPBjaXhVQqp6daSTrFOhrxmHny-ll17Q" #los datos del telegram
+CHAT_ID="-1002891538692"
+
 servicios=("ssh" "cron" "nginx") #lista de servicios que se trabajaran
 
 for servicio in "${servicios[@]}"; do #se recorrera los servicios en la lista
