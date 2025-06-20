@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TOKEN="7862071230:AAGkPBjaXhVQqp6daSTrFOhrxmHny-ll17Q" #los datos del telegram
+TOKEN="7862071230:AAGkPBjaXhVQqp6daSTrROhrxmHny-ll17Q" #los datos del telegram
 CHAT_ID="-1002891538692"
 
 servicios=("ssh" "cron" "nginx") #lista de servicios que se trabajaran
@@ -23,7 +23,7 @@ for servicio in "${servicios[@]}"; do #se recorrera los servicios en la lista
 		systemctl is-active --quiet "$servicio"
 
 		if [ $? -eq 0 ]; then
-		mensaje=" onni-chan el servicio $servicio se reinicio, pero se reiniciooo"
+		mensaje=" onni-chan el servicio $servicio se detubo o cayo, pero se reiniciooo"
 		echo "$mensaje"
 		else
 		mensaje "sempai el servicio  $servicio no c pudo reiniar"
