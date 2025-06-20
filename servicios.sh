@@ -17,10 +17,10 @@ for servicio in "${servicios[@]}"; do #se recorrera los servicios en la lista
 
 	if [ $? -ne 0 ]; then # si esta inactivo (status diferente de 0)
 		echo "Heyyy tu el que estas viendo esto, !el servicio $servicio esta detenido o caido, se esta tratando de reiniciar"
-		systemctl restart $servicio
+		systemctl restart "$servicio"
 		sleep 1
 
-		systemctl is-active --quiet $servicio
+		systemctl is-active --quiet "$servicio"
 
 		if [ $? -eq 0 ]; then
 		mensaje=" onni-chan el servicio $servicio se reinicio, pero se reiniciooo"
