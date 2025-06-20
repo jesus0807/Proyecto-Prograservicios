@@ -1,6 +1,6 @@
-EXPLICACION DEL SCRIPT "SERVICIOS.SH"
+Explicacion del script servicios.sh
 
-Este script tiene como objetivo monitorear de forma automaticamente algunos de los servicios de linux (ssh cron nginx), la cual detectara si alguno de estos esta "INACTIVO", siendo asi, que se tendra que reiniciar de forma automaticamente.
+Este script tiene como objetivo monitorear de forma automatica con algunos de los servicios de linux (ssh cron nginx), la cual detectara si alguno de estos esta "INACTIVO", siendo asi, que se tendra que reiniciar de forma automaticamente.
 
 A continuacion se seguira con las instruccione que el profesor propuso para este script
 ----------------------------------------------------------------------------------------
