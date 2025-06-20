@@ -1,36 +1,39 @@
 #!/bin/bash
 
-TOKEN="7862071230:AAGkPBjaXhVQqp6daSTrROhrxmHny-ll17Q" #los datos del telegram
-CHAT_ID="-1002891538692"
+# Los datos del bot de telegram
+TOKEN="7862071230:AAGkPBjaXhVQqp6daSTrROhrxmHny-ll17Q" #Token del bot proporcionado por BotFather
+CHAT_ID="-1002891538692" # ID del grupo dek telegram donde esta el bot
 
 servicios=("ssh" "cron" "nginx") #lista de servicios que se trabajaran
 
 mensaje_telegram() { #funcionamiento para enviar las notificaciones
 	local mensaje="$1"
-	curl -s -X POST https://api.telegram.org/bot$TOKEN/sendMessage \
-		-d chat_id="$CHAT_ID" \
-		-d text="$mensaje"
+
+	curl -s -X POST https://api.telegram.org/bot$TOKEN/sendMessage \ # envio de mensaje con la API de http de telegram
+		-d chat_id="$CHAT_ID" \  #ID del chat o grupo
+		-d text="$mensaje" # Contenido del mensaje a mostrar en telegram
 }
 
+# Butle principal
 for servicio in "${servicios[@]}"; do #se recorrera los servicios en la lista
 	systemctl is-active --quiet $servicio #se verificara si el servicio esta activo
 
-	if [ $? -ne 0 ]; then # si esta inactivo (status diferente de 0)
+	if [ $? -ne 0 ]; then # si esta inactivo (status diferente de 0) el servicio esta detendio
 		echo "Heyyy tu el que estas viendo esto, !el servicio $servicio esta detenido o caido, se esta tratando de reiniciar"
-		systemctl restart "$servicio"
-		sleep 1
+		systemctl restart "$servicio" #intenta reiniciar el servicio
+		sleep 1 # espera breve para el reinicio para el efecto
 
-		systemctl is-active --quiet "$servicio"
+		systemctl is-active --quiet "$servicio" # verifica nuevamente si el servicio se activo
 
-		if [ $? -eq 0 ]; then
+		if [ $? -eq 0 ]; then # salta un mensaje se c reinico 
 		mensaje=" onni-chan el servicio $servicio se detubo o cayo, pero se reiniciooo"
 		echo "$mensaje"
 		else
-		mensaje "sempai el servicio  $servicio no c pudo reiniar"
+		mensaje "sempai el servicio  $servicio no c pudo reiniar" # salta el mensaje si no c pudo reinicia
 		echo "$mensaje"
 		fi
 
-		mensaje_telegram "$mensaje"
+		mensaje_telegram "$mensaje" # envia el mensaje a telegram
 
 	else
 		echo " el servicio esta funcionando bien"
