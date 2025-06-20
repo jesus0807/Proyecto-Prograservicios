@@ -1,0 +1,6 @@
+#Ejemplo del archivo config que deberia integrar en su equipo para que sea la fuente de los scripts
+TOKEN="12346556ABCD"
+CHAT_ID="123456ABCD"
+RESPALDO_DIR="/home/ruta/al/directorio"
+SERVICIOS=("apache2" "cron" "ssh")
+RUTA_LOGS="./logs"
