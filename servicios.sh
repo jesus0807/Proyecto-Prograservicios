@@ -9,9 +9,9 @@ servicios=("ssh" "cron" "nginx") #lista de servicios que se trabajaran
 mensaje_telegram() { #funcionamiento para enviar las notificaciones
 	local mensaje="$1"
 
-	curl -s -X POST https://api.telegram.org/bot$TOKEN/sendMessage \ # envio de mensaje con la API de http de telegram
-		-d chat_id="$CHAT_ID" \  #ID del chat o grupo
-		-d text="$mensaje" # Contenido del mensaje a mostrar en telegram
+	curl -s -X POST "https://api.telegram.org/bot$TOKEN/sendMessage" \
+		-d chat_id="$CHAT_ID" \
+		-d text="$mensaje"
 }
 
 # Butle principal
