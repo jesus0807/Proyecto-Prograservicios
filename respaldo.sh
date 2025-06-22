@@ -1,11 +1,14 @@
 #!/bin/bash
 
 #Este script se encarga de comprimir un directorio y notificar por Telegram
-#Cargamos  las configuracions
-source config.txt
+
+#Establecemos PATH para el uso correcto de cron
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+#Cargamos  las configuraciones 
+source /home/jdope/Proyecto_Adm.Servicios/Proyecto-Prograservicios/config.txt
 
 #Convertimos la fecha y el archivo respaldo en variables para resumirlos y que sea mas facil usarlos
-Fecha=$(date +%Y-%m-%d_%H-%M)
+Fecha=$(date +%Y-%m-%d_%H:%M)
 Archivo_respaldado="$Directorio_respaldado/respaldo_$Fecha.tar.gz"
 
 #Debugeo de rutas (para probar que sean obtenidas del config.txt correctamente)
@@ -23,12 +26,16 @@ tar -czf "$Archivo_respaldado" "$Directorio_a_respaldar"
 
 #if para verificar si se hizo el respaldo correctamente
 if [[ -f "$Archivo_respaldado" ]]; then
-    Mensaje_para_bot="✅ Respaldo exitoso del directorio $Directorio_a_respaldar en: $Archivo_respaldado"
+    Mensaje_para_bot="✅ Respaldo exitoso de $Archivo_respaldado con fecha:$Fecha"
 else
     Mensaje_para_bot="⚠️ Error: Ocurrio un fallo al crear el respaldo"
 fi
 
 # Enviar notificación
-curl -s -X POST "https://api.telegram.org/bot$TOKEN/sendMessage" \
+/usr/bin/curl -s -X POST "https://api.telegram.org/bot$TOKEN/sendMessage" \
   -d chat_id="$CHAT_ID" \
   -d text="$Mensaje_para_bot"
+
+#Bitacora al .log
+echo "[$(date '+%Y-%m-%d %H:%M')] Respaldado $Directorio_a_respaldar -> $Archivo_respaldado" >> /home/jdope/respaldo.log
+
