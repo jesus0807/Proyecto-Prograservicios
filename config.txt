@@ -1,6 +1,5 @@
 #Ejemplo del archivo config que deberia integrar en su equipo para que sea la fuente de los scripts
 TOKEN="7862071230:AAGkPBjaXhVQqp6daSTrROhrxmHny-ll17Q"
 CHAT_ID="-1002891538692"
-RESPALDO_DIR="/home/ruta/al/directorio"
-SERVICIOS=("apache2" "cron" "ssh" "nginx")
-RUTA_LOGS="./logs"
+Directorio_respaldado="/home/jdope/Respaldo"
+Directorio_a_respaldar="/home/jdope/Documentos"
