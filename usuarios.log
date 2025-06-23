@@ -1,0 +1,13 @@
+2025-06-23 00:48:04 - No se pudo crear el usuario gallo
+2025-06-23 00:48:16 - No se pudo eliminar el usuario gallo
+2025-06-23 00:48:46 - No se pudo cambiar el nombre del usuario gallo
+2025-06-23 00:53:56 - Usuario miyagi creado correctamente
+2025-06-23 00:54:21 - Usuario miyagi cambiado a irvin
+2025-06-23 00:54:33 - Usuario irvin eliminado correctamente
+2025-06-23 13:10:08 - Usuario: Valentin creado correctamente
+2025-06-23 13:10:56 - Usuario Valentin cambio a: chalino
+2025-06-23 13:11:16 - Usuario: chalino se elimino correctamente
+2025-06-23 14:00:53 - Usuario: fei creado correctamente
+useradd: el usuario «fei» ya existe
+2025-06-23 14:03:37 - No se pudo crear el usuario fei
+2025-06-23 14:03:54 - Usuario GALLO creado correctamente
