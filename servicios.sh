@@ -11,7 +11,6 @@ mensaje_telegram() { #funcion para enviar las notificaciones
 		-d chat_id="$CHAT_ID" \
 		-d text="$mensaje"
 }
-
 # Butle principal
 for servicio in "${SERVICIOS[@]}"; do #se recorrera los servicios en la lista, que definimos en la seccion de SERVICIOS en config.txt
 	systemctl is-active --quiet $servicio # se verificara si el servicio esta activo
@@ -35,7 +34,6 @@ for servicio in "${SERVICIOS[@]}"; do #se recorrera los servicios en la lista, q
 	else
 		echo " el servicio esta funcionando bien " #manda un mensaje a la terminal que los servicios estan bien (en el caso que ningun servicio este fallando o se detubo)
 	fi
-
 		echo "$mensaje"
 		echo "$mensaje" >> "$(dirname "$0")/servicios.logs"
 done # final de bucle
