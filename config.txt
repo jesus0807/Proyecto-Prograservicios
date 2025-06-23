@@ -3,3 +3,9 @@ TOKEN="7862071230:AAGkPBjaXhVQqp6daSTrROhrxmHny-ll17Q"
 CHAT_ID="-1002891538692"
 Directorio_respaldado="/home/jdope/Respaldo"
 Directorio_a_respaldar="/home/jdope/Documentos"
+
+-------------------------------------------------------------------------
+Monitoreo
+limiteCpu=70
+limiteDisco=15
+-------------------------------------------------------------------------
