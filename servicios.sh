@@ -37,5 +37,5 @@ for servicio in "${SERVICIOS[@]}"; do #se recorrera los servicios en la lista, q
 	fi
 
 		echo "$mensaje"
-		echo "$mensaje" >> "(dirname "$0")/sercivios.logs"
+		echo "$mensaje" >> "$(dirname "$0")/servicios.logs"
 done # final de bucle
