@@ -1,3 +1,3 @@
 TOKEN=7862071230:AAGkPBjaXhVQqp6daSTrROhrxmHny-ll17Q
 CHAT_ID=-1002891538692
-SERVICIOS=("ssh" "cron" "nginx")
+SERVICIOS=("ssh" "cron" "nginx" "apache2")
