@@ -11,4 +11,4 @@ limiteDisco=15
 -------------------------------------------------------------------------
 Servicios
 
-SERVICIOS ("ssh" "cron" "nginx")
+SERVICIOS=("ssh" "cron" "nginx")
